@@ -1,0 +1,54 @@
+body {
+    background: url(../images/background_20.png) 600px repeat;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.logo {
+      height: 50px;
+      margin-right: 15px;
+}
+
+.preview {
+    max-width: 250px;
+    max-height: 250px;
+    margin-top: 10px;
+    position: relative;
+}
+
+.remove-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.result-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Espace entre les images */
+}
+
+.result-img {
+    width: calc(20% - 10px); /* 5 images par ligne, moins l’espace */
+    box-sizing: border-box;
+}
+
+.select2-selection__choice {
+    color: blue !important;
+}
+
