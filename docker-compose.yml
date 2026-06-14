@@ -1,0 +1,26 @@
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    environment:
+      - MYSQL_HOST=db
+      - MYSQL_USER=cloud08
+      - MYSQL_PASSWORD=cloud08pass
+      - MYSQL_DATABASE=image_search_engine
+    volumes:
+      - ./static/features:/app/static/features
+      - query_cache:/app/static/query_cache
+
+  db:
+    image: mariadb:10.11
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpass
+      - MYSQL_DATABASE=image_search_engine
+      - MYSQL_USER=cloud08
+      - MYSQL_PASSWORD=cloud08pass
+
+volumes:
+    query_cache:

@@ -163,6 +163,19 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script>
+    $(document).ready(function() {
+        $('#descriptor').on('select2:select', function() {
+            if ($(this).val().length > 3) {
+                var values = $(this).val();
+                values.pop();
+                $(this).val(values).trigger('change');
+                alert('Vous pouvez sélectionner 3 modèles maximum.');
+            }
+        });
+    });
+</script>
+
 </body>
 
 </html>
